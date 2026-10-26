@@ -1,0 +1,38 @@
+seed: 42
+
+data:
+  train_file: data/processed/train.jsonl
+  validation_file: data/processed/val.jsonl
+
+output:
+  output_dir: outputs/qwen3-8b-base-pharma-sft
+  logging_dir: logs/tensorboard/qwen3-8b-base-pharma-sft
+  summary_path: reports/training_summary_qwen3_8b_base_sft.json
+
+training:
+  max_seq_length: 4096
+  learning_rate: 2.0e-5
+  num_train_epochs: 1
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 8
+  gradient_checkpointing: true
+  bf16: true
+  logging_steps: 10
+  save_steps: 500
+  save_total_limit: 1
+  eval_steps: 500
+  warmup_ratio: 0.03
+  report_to:
+    - tensorboard
+
+hardware:
+  num_gpus: 4
+  gpu_name: NVIDIA A800 80GB
+  deepspeed_config: deepspeed/zero3.json
+
+dry_run:
+  enabled: false
+  max_train_samples: 100
+  max_eval_samples: 20
+  max_steps: 10

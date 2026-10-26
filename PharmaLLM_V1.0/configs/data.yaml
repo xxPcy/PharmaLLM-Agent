@@ -1,0 +1,42 @@
+seed: 42
+
+paths:
+  huatuogpt_raw_dir: data/raw/huatuogpt
+  tcm_raw_dir: data/raw/tcm
+  tcm_sampled: data/interim/tcm_20k.json
+  huatuogpt_normalized: data/interim/huatuogpt_normalized.jsonl
+  tcm_normalized: data/interim/tcm_normalized.jsonl
+  merged_normalized: data/interim/merged_normalized.jsonl
+  merged_valid: data/interim/merged_valid.jsonl
+  deduplicated: data/interim/deduplicated.jsonl
+  train: data/processed/train.jsonl
+  validation: data/processed/val.jsonl
+  cmb_exam_dir: data/benchmarks/cmb_exam
+  medqa_zh_dir: data/benchmarks/medqa_zh
+  contamination_report: reports/contamination_report.json
+  data_report_json: reports/data_report.json
+  data_report_md: reports/data_report.md
+
+schema:
+  legal_roles:
+    - system
+    - user
+    - assistant
+  require_user_message: true
+  require_assistant_message: true
+
+filtering:
+  min_input_tokens: 5
+  min_output_tokens: 10
+  max_total_tokens: 4096
+
+dedup:
+  exact: true
+  near: true
+  near_dedup_threshold: 0.90
+  minhash_num_perm: 128
+
+sampling:
+  huatuogpt_train_samples: 60000
+  tcm_train_samples: 20000
+  validation_samples: 2000

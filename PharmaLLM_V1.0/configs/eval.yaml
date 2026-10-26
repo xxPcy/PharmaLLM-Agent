@@ -1,0 +1,21 @@
+seed: 42
+
+benchmarks:
+  cmb_exam:
+    data_dir: data/benchmarks/cmb_exam
+    split: val
+  medqa_zh:
+    data_dir: data/benchmarks/medqa_zh
+    split: test
+
+generation:
+  max_new_tokens: 8
+  temperature: 0.0
+  top_p: 1.0
+  batch_size: 1
+
+outputs:
+  base_eval: reports/base_eval.json
+  sft_eval: reports/sft_eval.json
+  summary_json: reports/evaluation_summary.json
+  summary_md: reports/evaluation_summary.md

@@ -1,0 +1,7 @@
+version: agent-graph-1.6.0
+prompt_version: pharma-prompt-1.6.0
+max_tool_calls: 3
+max_route_retries: 1
+recursion_limit: 24
+# 读工具完成后默认回答；显式 continue=true 才继续规划，仍受次数和时间上限约束。
+on_invalid_route: answer_without_tools

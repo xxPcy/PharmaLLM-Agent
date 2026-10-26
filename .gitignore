@@ -1,0 +1,66 @@
+# Local credentials. Only reviewed examples belong in Git.
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.netrc
+.pypirc
+
+# Python / IDE / generated builds
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage*
+htmlcov/
+build/
+dist/
+.idea/
+.vscode/
+.DS_Store
+node_modules/
+
+# Business data, uploads, exports, logs and backups
+**/var/
+**/backups/
+**/logs/
+**/checkpoints/
+*.log
+*.dump
+*.sql
+*.db
+*.sqlite*
+*.zip
+*.tar
+*.tar.gz
+*.nii
+*.nii.gz
+*.dcm
+
+# Training data and generated experiment results. Do not ignore src/pharma_llm/data/.
+/PharmaLLM_V1.0/data/
+/PharmaLLM_V1.0/outputs/
+/PharmaLLM_V1.0/reports/
+/PharmaLLM_V1.1/agent_app/reports/
+*.jsonl
+!PharmaLLM_V1.1/agent_app/tests/evaluation/cases.jsonl
+
+# Weights stay on the inference server. Model JSON metadata and README are included.
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.bin
+*.onnx
+/PharmaLLM_V1.1/fold_*/
+/PharmaLLM_V1.1/agent_app/uv.lock

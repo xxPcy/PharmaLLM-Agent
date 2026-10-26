@@ -1,0 +1,52 @@
+seed: 42
+
+data:
+  train_file: data/processed/train.jsonl
+  validation_file: data/processed/val.jsonl
+
+output:
+  output_dir: outputs/qwen3-8b-base-pharma-lora-r16
+  logging_dir: logs/tensorboard/qwen3-8b-base-pharma-lora-r16
+  summary_path: reports/training_summary_qwen3_8b_base_lora_r16.json
+
+training:
+  max_seq_length: 4096
+  learning_rate: 1.0e-4
+  num_train_epochs: 1
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 8
+  gradient_checkpointing: true
+  bf16: true
+  logging_steps: 10
+  save_steps: 500
+  save_total_limit: 1
+  eval_steps: 500
+  warmup_ratio: 0.03
+  report_to:
+    - tensorboard
+
+lora:
+  enabled: true
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  bias: none
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+
+hardware:
+  num_gpus: 4
+  gpu_name: NVIDIA A800 80GB
+
+dry_run:
+  enabled: false
+  max_train_samples: 100
+  max_eval_samples: 20
+  max_steps: 10

@@ -1,0 +1,19 @@
+{
+  "name": "Task15_Femoralhead",
+  "description": "Femoral head MRI segmentation",
+  "tensorImageSize": "3D",
+  "reference": "",
+  "licence": "",
+  "release": "1.0",
+  "labels": {
+    "background": 0,
+    "femoralhead": 1,
+    "acetabulum": 2
+  },
+  "numTraining": 51,
+  "numTest": 9,
+  "file_ending": ".nii.gz",
+  "channel_names": {
+    "0": "MRI"
+  }
+}

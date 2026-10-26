@@ -1,0 +1,28 @@
+model:
+  bf16_path: outputs/qwen3-8b-base-pharma-sft
+  awq_path: outputs/qwen3-8b-base-pharma-sft-awq
+
+vllm:
+  host: 0.0.0.0
+  port: 8000
+  tensor_parallel_size: 4
+  max_model_len: 4096
+  gpu_memory_utilization: 0.90
+  enable_prefix_caching: true
+
+benchmark:
+  api_base: http://127.0.0.1:8000/v1
+  model_name: outputs/qwen3-8b-base-pharma-sft
+  concurrency:
+    - 1
+    - 4
+    - 8
+  num_prompts: 12
+  repeats: 2
+  warmup_requests: 2
+  max_tokens: 256
+  temperature: 0.2
+  top_p: 0.9
+  timeout: 120
+  output_json: reports/serving_benchmark.json
+  output_md: reports/serving_benchmark.md

@@ -1,0 +1,15 @@
+# 本机用户权重：单通道 T1；标签来自 checkpoint，fold 4。独立服务需手动启动。
+version: segmentation-1.1
+models:
+- id: femoralhead-t1-best
+  name: 股骨头与髋臼
+  version: sha256-50c13ab3d1efa877cc58
+  task_types:
+  - femoral_head_segmentation
+  modalities:
+  - T1
+  channels: 1
+  labels:
+    '0': background
+    '1': femoralhead
+    '2': acetabulum

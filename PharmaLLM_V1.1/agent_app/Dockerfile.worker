@@ -1,0 +1,10 @@
+FROM python:3.11-slim-bookworm
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
+WORKDIR /app
+COPY requirements.lock .
+RUN python -m pip install -r requirements.lock
+COPY . .
+RUN python -m pip install --no-deps . && useradd --uid 10001 --create-home pharma && \
+    mkdir -p /app/var/assets && chown -R pharma:pharma /app
+USER pharma
+CMD ["python", "scripts/start_worker.py"]

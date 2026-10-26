@@ -1,0 +1,22 @@
+{
+  "id": "femoralhead-t1-best",
+  "name": "股骨头与髋臼 · T1",
+  "version": "sha256-50c13ab3d1efa877cc58",
+  "task_types": [
+    "femoral_head_segmentation"
+  ],
+  "modalities": [
+    "T1"
+  ],
+  "channels": 1,
+  "labels": {
+    "0": "background",
+    "1": "femoralhead",
+    "2": "acetabulum"
+  },
+  "fold": 4,
+  "trainer": "nnUNetTrainer",
+  "configuration": "3d_fullres",
+  "checkpoint": "checkpoint_best.pth",
+  "sha256": "50c13ab3d1efa877cc58bc49fbda3d5a9c9d20290959a4a9ae82b0c5dfbf583a"
+}

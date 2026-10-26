@@ -1,0 +1,10 @@
+[
+  {
+    "title": "合成参考资料导入示例",
+    "source": "synthetic://pharma-agent/import-example",
+    "source_version": "1.1",
+    "license": "CC0-1.0 (project-authored synthetic fixture)",
+    "published_at": "2026-10-21",
+    "path": "reference-demo.md"
+  }
+]

@@ -1,0 +1,41 @@
+version: models-1.4.0
+# Add only configured, authorized chat aliases here; endpoint URLs stay server-side.
+selectable_chat_models: [pharma_llm_sft]
+models:
+  pharma_llm_sft:
+    display_name: PharmaLLM-1.0
+    provider: openai_compatible
+    base_url: ${PHARMA_VLLM_BASE_URL}
+    model_name: ${PHARMA_VLLM_MODEL_NAME}
+    api_key: ${PHARMA_VLLM_API_KEY}
+    revision: ${MODEL_REVISION}
+    # 本地 vLLM 提供 JSON Schema 约束解码；不代表模型经过 Tool Calling 训练。
+    capabilities: [chat, streaming, structured_output]
+    chat_template_kwargs: {enable_thinking: false}
+    # 当前 Qwen tokenizer：endoftext=151643，ChatML im_end=151645。
+    # 这是 vLLM 扩展参数；替换 tokenizer/服务时需重新核对，不能沿用 ID。
+    stop_token_ids: [151643, 151645]
+    # 仅自然语言回答使用；路由 JSON 不施加重复惩罚。
+    answer_repetition_penalty: 1.1
+    timeout_seconds: 120
+    max_retries: 1
+  independent_router:
+    provider: openai_compatible
+    base_url: ${ROUTER_BASE_URL}
+    model_name: ${ROUTER_MODEL_NAME}
+    api_key: ${ROUTER_API_KEY}
+    revision: unknown
+    capabilities: [chat, streaming]
+    timeout_seconds: 60
+    max_retries: 1
+  fake:
+    provider: fake
+    model_name: deterministic-demo
+    revision: fake-1.1
+    capabilities: [chat, streaming, structured_output]
+    timeout_seconds: 5
+    max_retries: 0
+roles:
+  medical_answer: pharma_llm_sft
+  general_chat: pharma_llm_sft
+  agent_router: ${ROUTER_MODEL_ALIAS}

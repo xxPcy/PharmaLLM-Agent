@@ -1,0 +1,4 @@
+{"id":"general-chat","message":"你好，请介绍你的功能。","expected_tool":null}
+{"id":"my-jobs","message":"查询我的任务状态。","expected_tool":"get_my_job"}
+{"id":"reference","message":"请检索合成工程演示资料，说明任务与引用功能。","expected_tool":"search_medical_reference"}
+{"id":"preference","message":"查询我的偏好设置。","expected_tool":"get_user_preference"}

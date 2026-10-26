@@ -1,0 +1,22 @@
+version: tools-1.3
+tools:
+  get_my_job:
+    enabled: true
+    timeout_seconds: 8
+    retries: 1
+  search_medical_reference:
+    enabled: true
+    timeout_seconds: 15
+    retries: 1
+  get_user_preference:
+    enabled: true
+    timeout_seconds: 5
+    retries: 1
+  create_task_draft:
+    enabled: true
+    timeout_seconds: 8
+    retries: 0
+  segment_medical_volume:
+    enabled: true
+    timeout_seconds: 15
+    retries: 0
