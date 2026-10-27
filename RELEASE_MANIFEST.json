@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "scope": "Source, configuration examples, documentation and synthetic UI screenshots only",
+  "scope": "Source, configuration examples, documentation, UI screenshots and recorded walkthrough media",
   "excluded": [
     "model weights",
     "datasets",
@@ -10,7 +10,7 @@
     "logs"
   ],
   "files": {
-    ".gitattributes": "debecdd8bb6eed703a52d5937c5b57557aa4f33048b4afa5c85e607c04bae354",
+    ".gitattributes": "0f98f5e01f11f7b45c6ddbe141ae084b3a97590c9747ec6cd754d3d123c6f02a",
     ".github/workflows/agent-ci.yml": "c1784765cd057f1fe90d22624d15b04d7927f4f35028435176539f7db17f5d04",
     ".gitignore": "8f075197eb47b67bf62f29220a1e1b3ca0eecbc3c29f608a0aa2bace7e116f8b",
     "LICENSE": "5764862b18907811c3e1108b708d0abda25c4e58e83183df052e5468f74cc121",
@@ -79,10 +79,10 @@
     "PharmaLLM_V1.1/agent_app/.env.example": "eb8d3c41393b22deb58449c1b1ddd57323f263b3f09e1ebf225ce43918300d99",
     "PharmaLLM_V1.1/agent_app/Dockerfile.api": "54ff15142ea17d8e1a296d354f587506484f8953b0ef6edcb26a935f46e06270",
     "PharmaLLM_V1.1/agent_app/Dockerfile.worker": "d30df5da00c5c10456cbd1acb9384c279e5c52a951371204ee7e14a5362f1283",
+    "PharmaLLM_V1.1/agent_app/alembic.ini": "09c71866226cd7d1fc6321b4f00235fca99b456566488272e639019db1b454e5",
     "PharmaLLM_V1.1/agent_app/alembic/env.py": "1841523c0bce694d56ec834dab613265532a1bbd9c6a27c615c4e5a59f6ddd8c",
     "PharmaLLM_V1.1/agent_app/alembic/versions/0001_initial.py": "55cbfbdf233a874d6d06940b0372cf566e945c715cf356df0ba4ace0c595395a",
     "PharmaLLM_V1.1/agent_app/alembic/versions/0002_hospital_access.py": "52c91f5eb56525d7aeaad6e00565459a10e62ae5c93adbef29ede2d7e27af196",
-    "PharmaLLM_V1.1/agent_app/alembic.ini": "09c71866226cd7d1fc6321b4f00235fca99b456566488272e639019db1b454e5",
     "PharmaLLM_V1.1/agent_app/compose.yaml": "752b9eff6b58aaa0a17659dbe8c1e43be12affdba2819382dd9cfa14d916a302",
     "PharmaLLM_V1.1/agent_app/configs/graph.yaml": "dbda810ce50c5d02f3e5412645f9c03920a55bd75f54a98a40f5bae1eca5cbf7",
     "PharmaLLM_V1.1/agent_app/configs/hardware/a800-single.env": "4e747c3d674f423c19f49e589f8b24ae1c5b71a87290e180bb885b9de7329e21",
@@ -198,7 +198,7 @@
     "PharmaLLM_V1.1/model/femoralhead-t1/dataset.json": "0a557799d21d57ac6d69ac923b151a33636dee467e05d0176715bc2752422f14",
     "PharmaLLM_V1.1/model/femoralhead-t1/model.json": "60021ddd929b1d06e6053a24664ba0d97594c7034b6e6b09f8196e0314f9ebea",
     "PharmaLLM_V1.1/model/femoralhead-t1/plans.json": "1abb0b324bade8c4ab40f56e3384e189a2a6c8ecb50e96496284d9855b202e9c",
-    "README.md": "4a4860a86c1ca29a277544521940bf0b8995df7a1078e3ae8f1cf941731e3c8c",
+    "README.md": "13038029ef61b43395ba00dc4096a8467c683ec6ae1c7bd20b0ea07dda2b08f4",
     "SECURITY.md": "5c1c2b9659489019a73631fa4566c30297ba46c2ee7000894595c2a78af1a73b",
     "THIRD_PARTY_NOTICES.md": "cbbb076fa0c3e045573f8e5fb6c322c1e18d9b570fc5f7769ca6cbe09f6e0534",
     "docs/GITHUB_UPLOAD.md": "f7b6bed567147c6539f7924980e7bf2da3d5363b2e7a7003765730447e83ced1",
@@ -206,9 +206,13 @@
     "docs/PROJECT_OVERVIEW.md": "4b3f7e9ed5b21a826427d2897d261cf7c5569b4131a4470df5dab1900b08090d",
     "docs/PUBLIC_ACCESS.md": "6dd10b643e700d3aba5002063b115e7b5097c5e3446f1ea8338a099eaadc34f7",
     "docs/RELATED_PROJECTS.md": "15a25a4863dc3886a82dec875605fa6f5f528057a612085f888025caa670eee8",
-    "docs/screenshots/README.md": "c4492c9467fadbe696c2b3fed7b00141ce37d730a576042e9d44275d2faaa91c",
+    "docs/media/README.md": "1999df814b9cf59435eb93540460359ea08be6f4f8583357a5a6a392bd44ca91",
+    "docs/media/pharmallm-agent-demo.gif": "617fc40cd7c38ca5f631dcb4c2d8aa7416f6ec6c4b8bbcb695ece375f4922a00",
+    "docs/media/pharmallm-agent-demo.mp4": "a7cda288146e79162e502c6d64a9af727bebff3e097b9a22e468beecadc9ffb2",
+    "docs/screenshots/README.md": "b00ce3e357b10fe78f63d533fc6e27fbe06608d154b581f3757510c3bfc27c45",
     "docs/screenshots/chat.png": "f92964fab019334bce4794bb59b8eef5b55e814af63396270221f7a62c360151",
     "docs/screenshots/imaging.png": "2bce9885e73f798809331ea82b9c0cfee216825c5c07162076850fbb34f529bc",
+    "docs/screenshots/login.png": "057b4883d93feb0c50869389c30d8233e66375a7701f0442079517fbf4b646e4",
     "tools/check_public_repo.py": "2fee0249b72db1c091de23af6089e74876829fb5cf739eb9052d442df85f4214",
     "tools/tests/test_public_repo.py": "9714087ca8333df31a5991bbb83124c762ee90aeb60d314905c66665fa308252"
   }

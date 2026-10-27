@@ -8,3 +8,5 @@
 *.env text eol=lf
 *.png binary
 *.ico binary
+*.gif binary
+*.mp4 binary
