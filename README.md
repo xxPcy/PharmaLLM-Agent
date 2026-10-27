@@ -32,11 +32,11 @@
 
 ### 影像任务操作演示
 
-上传影像、通过对话发起股骨头与髋臼分割，并查看影像工作区和任务状态。下方为 15 秒录屏的动图预览，点击可打开 MP4 文件。
+上传影像、通过对话发起股骨头与髋臼分割，并查看影像工作区和任务状态。下方为 约 18 秒完整录屏的动图预览，点击可打开 MP4 文件。
 
 [![PharmaLLM-Agent 影像任务操作演示](docs/media/pharmallm-agent-demo.gif)](docs/media/pharmallm-agent-demo.mp4)
 
-[查看演示视频 · MP4 / 15 秒](docs/media/pharmallm-agent-demo.mp4)
+[查看演示视频 · MP4 / 约 18 秒](docs/media/pharmallm-agent-demo.mp4)
 
 ## 技术栈
 
